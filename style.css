@@ -1,0 +1,35 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', sans-serif; background:#f4f7fa; color:#222; }
+.container { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+
+header { text-align:center; margin-bottom:1.5rem; }
+header h1 { font-size:2.2rem; color:#1a73e8; }
+.teams { margin-top:0.5rem; }
+.teams input { padding:0.5rem; font-size:1rem; width:120px; text-align:center; border:1px solid #ccc; border-radius:4px; }
+.teams span { margin:0 0.5rem; font-weight:bold; }
+
+.scoreboard { display:flex; justify-content:space-around; margin-bottom:1.5rem; }
+.team-score { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.1); text-align:center; flex:1; margin:0 0.5rem; }
+.team-score h2 { font-size:1.4rem; margin-bottom:0.5rem; }
+.runs { font-size:2rem; font-weight:bold; color:#1a73e8; }
+.overs { font-size:1rem; color:#555; }
+
+.controls { display:grid; grid-template-columns: repeat(5, 1fr); gap:0.5rem; margin-bottom:1.5rem; }
+.controls button { padding:0.8rem; font-size:1rem; background:#1a73e8; color:#fff; border:none; border-radius:6px; cursor:pointer; transition:0.2s; }
+.controls button:hover { background:#1557b0; }
+#undo, #reset { background:#e63946; grid-column: span 2; }
+#wicket { background:#d62828; grid-column: span 3; }
+
+.commentary { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+.commentary h3 { margin-bottom:0.5rem; }
+#ball-log { list-style:none; max-height:200px; overflow-y:auto; }
+#ball-log li { padding:0.3rem 0; border-bottom:1px solid #eee; }
+#ball-log li:last-child { border:none; }
+
+footer { text-align:center; margin-top:2rem; font-size:0.9rem; color:#666; }
+footer a { color:#1a73e8; }
+
+@media (max-width: 600px) {
+  .controls { grid-template-columns: repeat(3, 1fr); }
+  #wicket { grid-column: span 3; }
+}
