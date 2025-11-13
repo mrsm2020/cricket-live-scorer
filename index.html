@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cricket Live Scorer</title>
+  <title>Cricket Live Scorer + Stats</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,18 +25,26 @@
           <h2 id="teamA-name">India</h2>
           <div class="runs"><span id="runsA">0</span>/<span id="wicketsA">0</span></div>
           <div class="overs">Overs: <span id="oversA">0.0</span></div>
+          <div class="current-players" id="batA"></div>
         </div>
 
         <div class="team-score" id="teamB-score">
           <h2 id="teamB-name">Australia</h2>
           <div class="runs"><span id="runsB">0</span>/<span id="wicketsB">0</span></div>
           <div class="overs">Overs: <span id="oversB">0.0</span></div>
+          <div class="current-players" id="batB"></div>
         </div>
+      </section>
+
+      <!-- Current Over -->
+      <section class="current-over">
+        <strong>Over:</strong> <span id="current-over-balls"></span>
+        <span id="current-bowler"></span>
       </section>
 
       <!-- Controls -->
       <section class="controls">
-        <button data-runs="0">Dot</button>
+        <button data-runs="0">0</button>
         <button data-runs="1">1</button>
         <button data-runs="2">2</button>
         <button data-runs="3">3</button>
@@ -45,19 +53,47 @@
         <button id="wicket">Wicket</button>
         <button id="wide">Wide (+1)</button>
         <button id="noball">No-ball (+1)</button>
+        <button id="bye">Bye</button>
+        <button id="legbye">Leg Bye</button>
         <button id="undo">Undo</button>
         <button id="reset">Reset</button>
       </section>
 
-      <!-- Ball-by-ball commentary -->
-      <section class="commentary">
-        <h3>Commentary</h3>
-        <ul id="ball-log"></ul>
+      <!-- Player Management -->
+      <section class="player-management">
+        <div>
+          <h3>Batting Team: <span id="batting-team-name"></span></h3>
+          <input id="new-batsman" placeholder="Add batsman" />
+          <button id="add-batsman">Add</button>
+          <ul id="batsmen-list"></ul>
+        </div>
+        <div>
+          <h3>Bowling Team</h3>
+          <input id="new-bowler" placeholder="Add bowler" />
+          <button id="add-bowler">Add</button>
+          <button id="change-bowler">Change Bowler</button>
+          <ul id="bowlers-list"></ul>
+        </div>
       </section>
+
+      <!-- Stats Tables -->
+      <section class="stats">
+        <div>
+          <h3>Batting</h3>
+          <table id="batting-table"><thead><tr><th>Name</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr></thead><tbody></tbody></table>
+        </div>
+        <div>
+          <h3>Bowling</h3>
+          <table id="bowling-table"><thead><tr><th>Name</th><th>O</th><th>M</th><th>R</th><th>W</th><th>Econ</th></tr></thead><tbody></tbody></table>
+        </div>
+      </section>
+
+      <!-- Export -->
+      <button id="export">Export Match (JSON)</button>
     </main>
 
     <footer>
-      <p>Made with ❤️ for cricket fans • <a href="https://github.com/YOUR_USERNAME/cricket-live-scorer" target="_blank">GitHub Repo</a></p>
+      <p>Cricket Live Scorer + Stats • <a href="https://github.com/YOUR_USERNAME/cricket-live-scorer" target="_blank">GitHub</a></p>
     </footer>
   </div>
 
