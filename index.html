@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cricket Live Scorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Cricket Live Scorer</h1>
+      <div class="teams">
+        <input id="teamA" placeholder="Team A" value="India" />
+        <span>vs</span>
+        <input id="teamB" placeholder="Team B" value="Australia" />
+      </div>
+    </header>
+
+    <main>
+      <!-- Scoreboard -->
+      <section class="scoreboard">
+        <div class="team-score" id="teamA-score">
+          <h2 id="teamA-name">India</h2>
+          <div class="runs"><span id="runsA">0</span>/<span id="wicketsA">0</span></div>
+          <div class="overs">Overs: <span id="oversA">0.0</span></div>
+        </div>
+
+        <div class="team-score" id="teamB-score">
+          <h2 id="teamB-name">Australia</h2>
+          <div class="runs"><span id="runsB">0</span>/<span id="wicketsB">0</span></div>
+          <div class="overs">Overs: <span id="oversB">0.0</span></div>
+        </div>
+      </section>
+
+      <!-- Controls -->
+      <section class="controls">
+        <button data-runs="0">Dot</button>
+        <button data-runs="1">1</button>
+        <button data-runs="2">2</button>
+        <button data-runs="3">3</button>
+        <button data-runs="4">4</button>
+        <button data-runs="6">6</button>
+        <button id="wicket">Wicket</button>
+        <button id="wide">Wide (+1)</button>
+        <button id="noball">No-ball (+1)</button>
+        <button id="undo">Undo</button>
+        <button id="reset">Reset</button>
+      </section>
+
+      <!-- Ball-by-ball commentary -->
+      <section class="commentary">
+        <h3>Commentary</h3>
+        <ul id="ball-log"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ for cricket fans • <a href="https://github.com/YOUR_USERNAME/cricket-live-scorer" target="_blank">GitHub Repo</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
